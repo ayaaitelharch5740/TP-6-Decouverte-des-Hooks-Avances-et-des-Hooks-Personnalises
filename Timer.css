@@ -1,0 +1,112 @@
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.timer-clock {
+  font-family: 'Fira Code', monospace;
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--green);
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 30px rgba(52,211,153,0.4);
+  position: relative;
+}
+
+.timer-clock::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green), transparent);
+  border-radius: 1px;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-timer {
+  padding: 10px 22px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-timer:active { transform: scale(0.97); }
+
+.btn-timer.start {
+  background: var(--green-dim);
+  border-color: rgba(52,211,153,0.4);
+  color: var(--green);
+}
+
+.btn-timer.start:hover { background: rgba(52,211,153,0.2); }
+
+.btn-timer.pause {
+  background: var(--amber-dim);
+  border-color: rgba(251,191,36,0.4);
+  color: var(--amber);
+}
+
+.btn-timer.pause:hover { background: rgba(251,191,36,0.2); }
+
+.btn-timer.reset {
+  background: var(--surface2);
+  border-color: var(--border-light);
+  color: var(--text-muted);
+}
+
+.btn-timer.reset:hover {
+  color: var(--text);
+  background: var(--surface3);
+}
+
+.timer-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-light);
+}
+
+.status-dot.running {
+  background: var(--green);
+  box-shadow: 0 0 8px rgba(52,211,153,0.6);
+  animation: pulse-dot 1s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.timer-note {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  line-height: 1.7;
+  text-align: center;
+  width: 100%;
+}
+
+.timer-note span { color: var(--green); }

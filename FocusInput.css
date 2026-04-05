@@ -1,0 +1,96 @@
+.focus-input {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.focus-field {
+  position: relative;
+}
+
+.focus-field input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--surface2);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.focus-field input::placeholder {
+  color: var(--text-muted);
+}
+
+.focus-field input:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(244,114,182,0.15);
+}
+
+.focus-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-family: 'Fira Code', monospace;
+  color: var(--text-muted);
+  margin-top: 6px;
+  padding-left: 2px;
+}
+
+.focus-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-light);
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.focus-dot.active {
+  background: var(--pink);
+  box-shadow: 0 0 8px rgba(244,114,182,0.5);
+}
+
+.btn-focus {
+  padding: 12px 20px;
+  background: var(--pink-dim);
+  border: 1px solid rgba(244,114,182,0.35);
+  border-radius: var(--radius-sm);
+  color: var(--pink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.btn-focus:hover {
+  background: rgba(244,114,182,0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(244,114,182,0.15);
+}
+
+.btn-focus:active {
+  transform: translateY(0);
+}
+
+.focus-note {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  line-height: 1.7;
+}
+
+.focus-note span {
+  color: var(--pink);
+}

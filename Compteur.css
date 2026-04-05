@@ -1,0 +1,119 @@
+.compteur {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.compteur-display {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid var(--border-light);
+  background: var(--surface2);
+  box-shadow: 0 0 40px rgba(56,189,248,0.08), inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+.compteur-display.positive {
+  border-color: rgba(56,189,248,0.5);
+  box-shadow: 0 0 40px rgba(56,189,248,0.15);
+}
+
+.compteur-display.negative {
+  border-color: rgba(244,114,182,0.5);
+  box-shadow: 0 0 40px rgba(244,114,182,0.15);
+}
+
+.compteur-value {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.compteur-display.positive .compteur-value { color: var(--accent); }
+.compteur-display.negative .compteur-value { color: var(--pink); }
+
+.compteur-label {
+  font-size: 10px;
+  font-family: 'Fira Code', monospace;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+
+.compteur-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-count {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  background: var(--surface2);
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.btn-count:hover {
+  transform: scale(1.08);
+}
+
+.btn-count.plus {
+  background: var(--accent-dim);
+  border-color: rgba(56,189,248,0.4);
+  color: var(--accent);
+}
+
+.btn-count.plus:hover {
+  background: rgba(56,189,248,0.2);
+}
+
+.btn-count.minus {
+  background: var(--pink-dim);
+  border-color: rgba(244,114,182,0.4);
+  color: var(--pink);
+}
+
+.btn-count.minus:hover {
+  background: rgba(244,114,182,0.2);
+}
+
+.btn-count.reset {
+  background: var(--surface3);
+  border-color: var(--border-light);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.btn-count.reset:hover {
+  color: var(--text);
+  background: var(--surface2);
+}
+
+.compteur-info {
+  font-size: 0.78rem;
+  font-family: 'Fira Code', monospace;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.compteur-info span {
+  color: var(--accent);
+}
